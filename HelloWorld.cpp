@@ -45,7 +45,7 @@ void myFistFunction() {
 // Used in function based addition
 int addition(int x, int y) {
 	//cout << x << " + " << y << " = " << x + y << endl;
-	return x+y; // Does not work FIX NOW
+	return x+y; 
 }
 
 
