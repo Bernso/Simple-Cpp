@@ -4,7 +4,7 @@
 #include <ctime>
 
 // Makes it so that you do not have to type 'std::' when using the equivilent of the print() and input() funtion in python
-using namespace std; 
+using namespace std;
 
 /*
 
@@ -12,7 +12,7 @@ using namespace std;
 cout		= c ouput
 cin			= c input
 short		= used for small integers from -32768 to 32767
-long		= used for large intigers 
+long		= used for large intigers
 long long	= used fot very large intigers
 const		= makes it so that the variable value will not change
 double		= decimal number
@@ -24,7 +24,7 @@ long		= a 4 byte variable that lets you store far larger numbers (but in return 
 char		= a character
 bool		= true, false
 auto		= automatically assigns a data-type to a variable
-binary		= to use binary use '0b{YOURBINARY}' does not have to be in curly brackets 
+binary		= to use binary use '0b{YOURBINARY}' does not have to be in curly brackets
 hexadecimal	= to use a hexadecimal number use '0x{YOURHEXADECIMAL}' does not have to be in curly brackets
 unsigned	= this makes a value stay positive, it cannot be negative
 time		= this uses the seconds it has been since Jan 1st 1970
@@ -44,22 +44,53 @@ void myFistFunction() {
 
 // Used in function based addition
 int addition(int x, int y) {
-	//cout << x << " + " << y << " = " << x + y << endl;
-	return x+y; // Does not work FIX NOW
+	//cout << x << " + " << y << " = " << x + y << endl; // Alternative
+	return x + y;
 }
 
 
-
+// Used in changing the parameters
 string youCanChangeTheParameter(string beans = "beans") {
 	//cout << beans << endl;
 	return beans;
 }
 
+// Used in number swapping with functions
+pair<int, int> swapNumbers(int& number1, int& number2) {
+	int temp = number1;
+	number1 = number2;
+	number2 = temp;
+	return make_pair(number1, number2);
+}
+
+
+
 
 int main() {
 
 
+	/*
+	// Number swapper with functions
+	int num1;
+	cout << "Enter a number to be swapped: ";
+	cin >> num1;
+	cout << endl;
 
+	int num2;
+	cout << "Enter another number to be swapped: ";
+	cin >> num2;
+	cout << endl;
+
+	cout << "Before the swap" << endl
+		<< "The first number: " << num1 << endl
+		<< "The second number: " << num2 << endl << endl;
+
+	pair<int, int> swappednums = swapNumbers(num1, num2);
+
+	cout << "After the swap" << endl
+		<< "The first number: " << swappednums.first << endl
+		<< "The second number: " << swappednums.second << endl;
+	*/
 
 
 	/*
@@ -84,7 +115,7 @@ int main() {
 	cin >> num2;
 
 	cout << endl;
-	
+
 	cout << "Your answer is: " << addition(num1, num2);
 	return 0;
 	*/
@@ -99,7 +130,7 @@ int main() {
 	/*
 	// While and for loop, when using a while loop make sure to use '==' if you are saying if equal yk
 	bool vishwaMonkey = true;
-	while (vishwaMonkey == true) {	
+	while (vishwaMonkey == true) {
 		for (int beans = 1; beans <= 10; beans += 1) {
 			cout << "Vishwa has been a monkey for: " << beans << " years" << endl;
 		}
@@ -131,7 +162,7 @@ int main() {
 	return 0;
 	*/
 
-	
+
 	/*
 	// Random number generator: 1-6
 	srand(time(nullptr));
@@ -152,8 +183,8 @@ int main() {
 	cout << "Random number 0-9: " << random << endl;
 	return 0;
 	*/
-	
-	
+
+
 	/*
 	int number = 1000000;
 	short another = number;
