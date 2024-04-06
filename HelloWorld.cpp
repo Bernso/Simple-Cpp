@@ -31,6 +31,8 @@ time		= this uses the seconds it has been since Jan 1st 1970
 srand		= sets the starting point for producing a series of pseudo-random integers
 while		= runs the code in the block while the statement is true
 for			= runs the code in the block until the statement is no longer true
+pair		= allows you to use two values at the same time
+sum			= this function gets all the intigers beneath the number and adds them all up (sum) 
 
 
 */
@@ -63,10 +65,119 @@ pair<int, int> swapNumbers(int& number1, int& number2) {
 	return make_pair(number1, number2);
 }
 
+// Used in Printing all values in the list
+void myFunction(int myNumbers[5]) {
+	for (int i = 0; i < 5; i++) {
+		cout << myNumbers[i] << "\n";
+	}
+}
+
+// Used in intiger and double addition
+int plusFunc(int x, int y) {
+	return x + y;
+}
+
+// Used in intiger and double addition
+double plusFunc(double x, double y) {
+	return x + y;
+}
+
+// Used in the sum of a number
+int sum(int k) {
+
+	if (k > 0) {
+		return k + sum(k - 1);
+	}
+
+	else {
+		return 0;
+	}
+
+}
+
+class firstClass {
+public:
+	void firstMethod() {
+		cout << "Hello guys, " << "this is my first method!" 
+			<< endl;
+	}
+	void secondMethod();
+};
+
+// Creates the method outside of the class so it is easier to see what is going on inside the class
+void firstClass::secondMethod() {
+	cout << "hi" << endl;
+}
 
 
 
 int main() {
+
+
+
+
+	/*
+	// Refreshing memory a bit more aswell
+	for (int q = 1; q <= 100; q += 1) {
+		cout << "Vishwa is a monkey " << q << endl;
+	}
+	return 0;
+	*/
+
+
+	
+	firstClass firstObject;		// Create the object 
+	firstObject.firstMethod();	// Call the method from inside the object
+
+	firstClass secondObject;
+	secondObject.secondMethod();
+	return 0;
+	
+
+
+	/*
+	// Refreshing my memory
+	cout << "Enter a number: " << endl;
+	int number1;
+	cin >> number1;
+
+	cout << "Enter another number: " << endl;
+	int number2;
+	cin >> number2;
+
+	cout << endl 
+		<< number1 << " + " << number2 << " = "
+		<< number1 + number2
+		<< endl;
+	return 0;
+	*/
+
+
+
+	/*
+	// Adds up all the intigers less than x (the sum)
+	int result = sum(1000);
+	cout << result;
+	return 0;
+	*/
+	
+
+	/*
+	// 
+	int myNum1 = plusFunc(8, 5);
+	double myNum2 = plusFunc(4.3, 6.26);
+	cout << "Int: " << myNum1 << endl;
+	cout << "Double: " << myNum2;
+	return 0;
+	*/
+
+
+	/*
+	// Prints all the values in the list
+	int myNumbers[5] = {10, 20, 30, 40, 50};
+	myFunction(myNumbers);
+	return 0;
+	*/
 
 
 	/*
@@ -338,7 +449,7 @@ int main() {
 	a = b;
 	b = temp;
 
-	:cout << a;
+	cout << a;
 	return 0;
 	*/
 
