@@ -266,7 +266,7 @@ int calculator() {
 	}
 	else {
 		system("CLS");
-		cout << endl << "Bro, just enter an option :skull:" << endl << endl;
+		cout << "Bro, just enter an option :skull:" << endl << endl;
 		calculator();
 	}
 	return 0;
