@@ -2,6 +2,8 @@
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
+#include <list>
+#include <numeric>
 
 // Makes it so that you do not have to type 'std::' when using the equivilent of the print() and input() funtion in python
 using namespace std;
@@ -110,10 +112,173 @@ void firstClass::secondMethod() {
 }
 
 
+int calculator() {
+	int operatorToUse;
+
+	cout << "What would you like to do?" << endl << endl
+		<< "1. Addition" << endl
+		<< "2. Subtraction" << endl
+		<< "3. Multiplication" << endl
+		<< "4. Division" << endl << endl;
+
+	cin >> operatorToUse;
+
+	if (operatorToUse == 1) {
+		int numbersToUseAddition;
+		cout << "Enter the amount of numbers to use: ";
+		cin >> numbersToUseAddition;
+
+		if (numbersToUseAddition == 0) {
+			cout << endl << "Why did you even select addition if your not going to add anything? :skull:" << endl;
+		}
+
+		else {
+			list<int> numbersToAdd;
+			for (numbersToUseAddition; numbersToUseAddition != 0; numbersToUseAddition -= 1) {
+				if (numbersToUseAddition < numbersToUseAddition - 1) {
+					int newNum;
+					cout << "Enter another number: ";
+					cin >> newNum;
+
+					numbersToAdd.push_back(newNum);
+				}
+				else {
+					int newNum;
+					cout << "Enter a number: ";
+					cin >> newNum;
+
+					numbersToAdd.push_back(newNum);
+				}
+			}
+			cout << endl;
+			int answerAddition = accumulate(numbersToAdd.begin(), numbersToAdd.end(), 0);
+			cout << "Your answer is: " << answerAddition;
+		}
+	}
+
+	else if (operatorToUse == 2) {
+		int numbersToUseSubtraction;
+		cout << "Enter the amount of numbers to use: ";
+		cin >> numbersToUseSubtraction;
+
+		if (numbersToUseSubtraction == 0) {
+			cout << endl << "Why did you even select addition if your not going to add anything? :skull:" << endl;
+		}
+
+		else {
+			list<int> numbersToSubtract;
+			for (numbersToUseSubtraction; numbersToUseSubtraction != 0; numbersToUseSubtraction -= 1) {
+				if (numbersToUseSubtraction < numbersToUseSubtraction - 1) {
+					int newNum;
+					cout << "Enter another number: ";
+					cin >> newNum;
+
+					numbersToSubtract.push_back(newNum);
+				}
+				else {
+					int newNum;
+					cout << "Enter a number: ";
+					cin >> newNum;
+
+					numbersToSubtract.push_back(newNum);
+				}
+			}
+			cout << endl;
+			int result = 0;
+			if (!numbersToSubtract.empty()) {
+				result = numbersToSubtract.front(); // Start with the first element
+				numbersToSubtract.pop_front(); // Remove the first element
+
+				for (int num : numbersToSubtract) {
+					result -= num; // Subtract each of the remaining elements
+				}
+			}
+
+			int answerAddition = accumulate(numbersToSubtract.begin(), numbersToSubtract.end(), 0);
+			cout << "Your answer is: " << answerAddition;
+		}
+	}
+
+	else if (operatorToUse == 3) {
+		int numbersToUseMultiplication;
+		cout << "Enter the amount of numbers to use: ";
+		cin >> numbersToUseMultiplication;
+
+		if (numbersToUseMultiplication == 0) {
+			cout << endl << "Why did you even select addition if your not going to add anything? :skull:" << endl;
+		}
+
+		else {
+			list<int> numbersToAdd;
+			for (numbersToUseMultiplication; numbersToUseMultiplication != 0; numbersToUseMultiplication -= 1) {
+				if (numbersToUseMultiplication < numbersToUseMultiplication - 1) {
+					int newNum;
+					cout << "Enter another number: ";
+					cin >> newNum;
+
+					numbersToAdd.push_back(newNum);
+				}
+				else {
+					int newNum;
+					cout << "Enter a number: ";
+					cin >> newNum;
+
+					numbersToAdd.push_back(newNum);
+				}
+			}
+			cout << endl;
+			int answerAddition = accumulate(numbersToAdd.begin(), numbersToAdd.end(), 0);
+			cout << "Your answer is: " << answerAddition;
+		}
+	}
+
+	else if (operatorToUse == 4) {
+		int numbersToUseDivision;
+		cout << "Enter the amount of numbers to use: ";
+		cin >> numbersToUseDivision;
+
+		if (numbersToUseDivision == 0) {
+			cout << endl << "Why did you even select addition if your not going to add anything? :skull:" << endl;
+		}
+
+		else {
+			list<int> numbersToAdd;
+			for (numbersToUseDivision; numbersToUseDivision != 0; numbersToUseDivision -= 1) {
+				if (numbersToUseDivision < numbersToUseDivision - 1) {
+					int newNum;
+					cout << "Enter another number: ";
+					cin >> newNum;
+
+					numbersToAdd.push_back(newNum);
+				}
+				else {
+					int newNum;
+					cout << "Enter a number: ";
+					cin >> newNum;
+
+					numbersToAdd.push_back(newNum);
+				}
+			}
+			cout << endl;
+			int answerAddition = accumulate(numbersToAdd.begin(), numbersToAdd.end(), 0);
+			cout << "Your answer is: " << answerAddition;
+		}
+	}
+	else {
+		system("CLS");
+		cout << endl << "Bro, just enter an option :skull:" << endl << endl;
+		calculator();
+	}
+	return 0;
+}
+
+
+
 
 int main() {
 
-
+	calculator();
+	return 0;
 
 
 	/*
@@ -125,14 +290,14 @@ int main() {
 	*/
 
 
-	
+	/*
 	firstClass firstObject;		// Create the object 
 	firstObject.firstMethod();	// Call the method from inside the object
 
 	firstClass secondObject;
 	secondObject.secondMethod();
 	return 0;
-	
+	*/
 
 
 	/*
